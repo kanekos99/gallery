@@ -31,7 +31,7 @@ const original_chibis = [
   "./assets/artwork/original/chibis/design_1.png",
   "./assets/artwork/original/chibis/Loren_Chibi_Doodle.png",
   "./assets/artwork/original/chibis/Elphiem_Chibi_Doodle.png",
-  "./assets/artwork/original/chibis/Ylene_Chibi_Doodle.png",
+  "./assets/artwork/original/chibis/Ylene_Chibi_Doodle.PNG",
 ];
 
 //------------------------------------------------------Fanart-----------------------------------------------//
