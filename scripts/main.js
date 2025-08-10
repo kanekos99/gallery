@@ -21,7 +21,6 @@ const sketches_gallery = $(sketches_gallery_name);
 //-------------------- sub categories-------------------------//
 
 const modalImg = document.getElementById("modal-image");
-const modal_loader = document.getElementById("modal-loader");
 
 const imageCategories = [
   {
@@ -132,12 +131,10 @@ function showNextOrPrevImg(direction) {
 }
 
 function showImage(src) {
-  modal_loader.style.display = "block";
   modalImg.style.display = "none";
   modalImg.src = src;
 
   modalImg.onload = function () {
-    modal_loader.style.display = "none";
     modalImg.style.display = "block";
   };
 }
