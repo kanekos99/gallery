@@ -1,3 +1,2 @@
 # gallery
-Simple art portfolio website
-Inspired by carrd
+Simple art portfolio website inspired by carrd

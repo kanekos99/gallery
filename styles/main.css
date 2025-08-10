@@ -19,7 +19,7 @@ body {
 body {
   width: 100%;
   height: 100%;
-  background: #edd09f;
+  background: white;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20205%20205%22%20width%3D%22205%22%20height%3D%22205%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20path%20%7B%20fill%3A%20none%3B%20stroke-width%3A%203px%3B%20stroke%3A%20%23FFFFFF%3B%20vector-effect%3A%20non-scaling-stroke%3B%20%7D%20%3C%2Fstyle%3E%20%3Cpath%20d%3D%22M0%2C179c51%2C0%2C51-51%2C102-51s51%2C51%2C102%2C51%22%20%2F%3E%20%3Cpath%20d%3D%22M0%2C77c51%2C0%2C51-51%2C102-51s51%2C51%2C102%2C51%22%20%2F%3E%3C%2Fsvg%3E"),
     linear-gradient(
       45deg,
@@ -33,7 +33,7 @@ body {
 }
 
 .content-box {
-  max-width: 680px;
+  max-width: 720px;
   min-width: 300px;
   margin: 0px 25px 0px 25px;
   background-color: white;
@@ -71,6 +71,9 @@ body {
 
 hr.dashed {
   border-top: 3px dashed #2b7379;
+}
+
+.main-divider {
   width: 600px;
 }
 
@@ -79,4 +82,45 @@ hr.dashed {
   font-size: 0.9rem;
   color: #67a9a9 !important;
   font-family: afacad;
+}
+
+.site-heading {
+  text-align: right;
+  font-family: afacad-bold;
+  color: #2b7379;
+  font-size: 2.25rem;
+  padding: 0;
+}
+
+.sub-heading {
+  font-family: afacad;
+  color: white;
+  font-size: 1.25rem;
+  background-color: #67a9a9;
+  border-radius: 25px;
+}
+
+.gallery-container {
+  padding: 0px !important;
+}
+
+.gallery-thumbnail {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 11.25rem;
+  object-fit: cover;
+  object-position: 25% 12%;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.chibi-gallery-thumbnail {
+  display: block;
+  width: 11.25rem;
+  height: 11.25rem;
+  object-fit: cover;
+  object-position: center;
+  margin: 2px;
+  cursor: pointer;
 }
