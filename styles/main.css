@@ -204,6 +204,9 @@ hr.dashed {
 
 .modal-open {
   padding-right: 0px !important;
+  overflow: hidden !important;
+  height: 100%;
+  position: fixed;
 }
 
 .modal {
@@ -235,7 +238,7 @@ hr.dashed {
   object-fit: contain;
   width: auto;
   max-height: 650px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .modal-row {
