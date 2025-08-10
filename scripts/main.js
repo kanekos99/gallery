@@ -7,6 +7,9 @@ const original_illustration_gallery = $(original_illustration_gallery_name);
 const original_chibis_gallery_name = "#original_chibis_gallery";
 const original_chibis_gallery = $(original_chibis_gallery_name);
 
+const modalImg = document.getElementById("modal-image");
+const modal_loader = document.getElementById("modal-loader");
+
 const imageCategories = [
   {
     categoryArray: original_illustrations,
@@ -39,9 +42,9 @@ function loadImages() {
       <img
         src="${image}"
         class="${galleryClass} img-fluid"
-        onclick="showFullImage('${image}')"
+        onclick="showImage(this.src)"
         data-bs-toggle="modal" 
-        data-bs-target="#exampleModal"
+        data-bs-target="#galleryModal"
       />`;
       category.categoryElementId.append(imageThumbnailHTML);
     });
@@ -81,6 +84,27 @@ function handleHashChange() {
   }
 }
 
-function showFullImage(imageSrc) {
-  console.log(imageSrc);
+
+function showNextOrPrevImg(direction) {
+  const visibleImages = $("img:visible").not("#modal-image").toArray();
+  const currentSrc = modalImg.src;
+  let currentIndex = visibleImages.findIndex((img) => img.src === currentSrc);
+  let nextIndex = currentIndex + direction;
+  if (direction === 1 && nextIndex >= visibleImages.length) {
+    nextIndex = 0;
+  } else if (direction === -1 && nextIndex === -1) {
+    nextIndex = visibleImages.length - 1;
+  }
+  showImage($(visibleImages[nextIndex]).attr("src"));
+}
+
+function showImage(src) {
+  modal_loader.style.display = "block"; 
+  modalImg.style.display = "none"; 
+  modalImg.src = src;
+
+  modalImg.onload = function () {
+    modal_loader.style.display = "none"; 
+    modalImg.style.display = "block"; 
+  };
 }

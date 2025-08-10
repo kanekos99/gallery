@@ -36,7 +36,7 @@
     <div class="container">
       <div class="row justify-content-center px-3">
         <div
-          class="row justify-content-center content-box mt-5 pb-4 px-4 active"
+          class="row justify-content-center content-box pb-4 px-4 active"
           id="home_section"
         >
           <img src="assets/confuse.png" class="site-img mt-4" />
@@ -65,7 +65,7 @@
           </p>
         </div>
         <div
-          class="row justify-content-center content-box my-5 pb-4 px-5"
+          class="row justify-content-center content-box mb-5 pb-4 px-5"
           id="original"
           style="display: none"
         >
@@ -112,6 +112,45 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="galleryModal"
+      tabindex="-1"
+      aria-labelledby="galleryModalLabel"
+    >
+      <i
+        class="fa fa-times-circle-o modal-cross"
+        aria-hidden="true"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></i>
+      <i
+        class="fa fa-chevron-left modal-arrow modal-arrow-left"
+        aria-hidden="true"
+        onclick="showNextOrPrevImg(-1);"
+      ></i>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="d-flex flex-row justify-content-center modal-row">
+            <div id="modal-image-container">
+              <div
+                id="modal-loader"
+                class="spinner-border text-info"
+                role="status"
+              ></div>
+              <img src="" class="modal-image img-fluid mx-3" id="modal-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <i
+        class="fa fa-chevron-right modal-arrow modal-arrow-right"
+        aria-hidden="true"
+        onclick="showNextOrPrevImg(1);"
+      ></i>
     </div>
 
     <script src="scripts/images.js"></script>
