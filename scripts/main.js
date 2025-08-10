@@ -26,6 +26,7 @@ const imageCategories = [
 const app = {
   init: function () {
     loadImages();
+    hideLoadingScreen();
   },
 };
 
@@ -38,14 +39,16 @@ function loadImages() {
       if (category.categoryName === "original_chibis") {
         galleryClass = "chibi-gallery-thumbnail";
       }
-      const imageThumbnailHTML = ` 
+
+      const imageThumbnailHTML = `
       <img
         src="${image}"
         class="${galleryClass} img-fluid"
         onclick="showImage(this.src)"
-        data-bs-toggle="modal" 
+        data-bs-toggle="modal"
         data-bs-target="#galleryModal"
       />`;
+
       category.categoryElementId.append(imageThumbnailHTML);
     });
   });
@@ -84,7 +87,6 @@ function handleHashChange() {
   }
 }
 
-
 function showNextOrPrevImg(direction) {
   const visibleImages = $("img:visible").not("#modal-image").toArray();
   const currentSrc = modalImg.src;
@@ -99,12 +101,43 @@ function showNextOrPrevImg(direction) {
 }
 
 function showImage(src) {
-  modal_loader.style.display = "block"; 
-  modalImg.style.display = "none"; 
+  modal_loader.style.display = "block";
+  modalImg.style.display = "none";
   modalImg.src = src;
 
   modalImg.onload = function () {
-    modal_loader.style.display = "none"; 
-    modalImg.style.display = "block"; 
+    modal_loader.style.display = "none";
+    modalImg.style.display = "block";
   };
+}
+
+function hideLoadingScreen() {
+  const images = document.querySelectorAll(
+    ".gallery-thumbnail, .chibi-gallery-thumbnail"
+  ); // your gallery images
+  let loadedCount = 0;
+
+  if (images.length === 0) {
+    // no images, hide immediately
+    document.getElementById("loading-screen").style.display = "none";
+    return;
+  }
+
+  images.forEach((img) => {
+    // If image already loaded (from cache), count immediately
+    if (img.complete && img.naturalHeight !== 0) {
+      loadedCount++;
+      if (loadedCount === images.length) {
+        document.getElementById("loading-screen").style.display = "none";
+      }
+    } else {
+      // listen for load event
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          document.getElementById("loading-screen").style.display = "none";
+        }
+      });
+    }
+  });
 }

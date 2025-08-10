@@ -129,6 +129,15 @@ hr.dashed {
   cursor: pointer;
 }
 
+.gallery-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 10;
+}
+
 .footer-buttons {
   padding: 0px 0px 0px 0px !important;
 }
@@ -147,6 +156,48 @@ hr.dashed {
   font-family: afacad;
   text-decoration: none;
   width: 49%;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(237, 208, 159, 1) 0%,
+    rgba(171, 215, 216, 1) 60%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* HTML: <div class="loader"></div> */
+.main-loader {
+  width: calc(6 * 30px);
+  height: 50px;
+  display: flex;
+  color: white;
+  filter: drop-shadow(30px 25px 0 currentColor)
+    drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+  clip-path: inset(0 100% 0 0);
+  animation: l12 2s infinite steps(7);
+}
+.main-loader:before {
+  content: "";
+  width: 30px;
+  height: 25px;
+  --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
+  background: var(--c) left / 70% 70%, var(--c) right/20% 20%,
+    var(--c) top 0 right 15%/20% 20%, var(--c) bottom 0 right 15%/20% 20%;
+}
+@keyframes l12 {
+  100% {
+    clip-path: inset(0 -30px 0 0);
+  }
 }
 
 /*-----------------------Modal----------------------------*/
