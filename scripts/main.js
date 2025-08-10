@@ -1,11 +1,24 @@
 const home_section_name = "#home_section";
 const home_section = $(home_section_name);
 
+//-------------------- sub categories-------------------------//
+
 const original_illustration_gallery_name = "#original_illustration_gallery";
 const original_illustration_gallery = $(original_illustration_gallery_name);
 
 const original_chibis_gallery_name = "#original_chibis_gallery";
 const original_chibis_gallery = $(original_chibis_gallery_name);
+
+const fanart_illustrations_gallery_name = "#fanart_illustrations_gallery";
+const fanart_illustrations_gallery = $(fanart_illustrations_gallery_name);
+
+const fanart_sticker_sheets_gallery_name = "#fanart_sticker_sheets_gallery";
+const fanart_sticker_sheets_gallery = $(fanart_sticker_sheets_gallery_name);
+
+const sketches_gallery_name = "#sketches_gallery";
+const sketches_gallery = $(sketches_gallery_name);
+
+//-------------------- sub categories-------------------------//
 
 const modalImg = document.getElementById("modal-image");
 const modal_loader = document.getElementById("modal-loader");
@@ -20,6 +33,21 @@ const imageCategories = [
     categoryArray: original_chibis,
     categoryElementId: original_chibis_gallery,
     categoryName: "original_chibis",
+  },
+  {
+    categoryArray: fanart_illustrations,
+    categoryElementId: fanart_illustrations_gallery,
+    categoryName: "fanart_illustrations",
+  },
+  {
+    categoryArray: fanart_sticker_sheets,
+    categoryElementId: fanart_sticker_sheets_gallery,
+    categoryName: "fanart_sticker_sheets",
+  },
+  {
+    categoryArray: sketches,
+    categoryElementId: sketches_gallery,
+    categoryName: "sketches",
   },
 ];
 
@@ -36,7 +64,10 @@ function loadImages() {
   imageCategories.forEach((category) => {
     category.categoryArray.forEach((image) => {
       let galleryClass = "gallery-thumbnail";
-      if (category.categoryName === "original_chibis") {
+      if (
+        category.categoryName === "original_chibis" ||
+        category.categoryName === "fanart_sticker_sheets"
+      ) {
         galleryClass = "chibi-gallery-thumbnail";
       }
 
