@@ -142,5 +142,32 @@ hr.dashed {
   margin-bottom: 7px;
   font-family: afacad;
   text-decoration: none;
-  min-width: 49%;
+  width: 49%;
+}
+
+/*-----------------------Modal----------------------------*/
+
+.modal-open {
+  padding-right: 0px !important;
+}
+
+.modal {
+  padding-right: 0px !important;
+}
+
+/*--------------------Responsiveness--------------------*/
+
+@media (max-width: 736px) {
+  .gallery-thumbnail {
+    height: 8.4375rem;
+  }
+
+  .chibi-gallery-thumbnail {
+    width: 8.4375rem;
+    height: 8.4375rem;
+  }
+
+  .footer-btn {
+    width: 100%;
+  }
 }

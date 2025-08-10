@@ -7,8 +7,6 @@ const original_illustration_gallery = $(original_illustration_gallery_name);
 const original_chibis_gallery_name = "#original_chibis_gallery";
 const original_chibis_gallery = $(original_chibis_gallery_name);
 
-const sections = ["#original"];
-
 const imageCategories = [
   {
     categoryArray: original_illustrations,
@@ -41,6 +39,9 @@ function loadImages() {
       <img
         src="${image}"
         class="${galleryClass} img-fluid"
+        onclick="showFullImage('${image}')"
+        data-bs-toggle="modal" 
+        data-bs-target="#exampleModal"
       />`;
       category.categoryElementId.append(imageThumbnailHTML);
     });
@@ -78,4 +79,8 @@ function handleHashChange() {
   } else {
     backToHome();
   }
+}
+
+function showFullImage(imageSrc) {
+  console.log(imageSrc);
 }
