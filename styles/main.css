@@ -202,7 +202,7 @@ hr.dashed {
 /*-----------------------Modal----------------------------*/
 
 .modal-open {
-  padding-right: 15px !important;
+  padding-right: 0px !important;
   overflow: hidden !important;
   height: 100% !important;
 }
@@ -286,6 +286,29 @@ hr.dashed {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+
+/*--------------------------CUSTOM SCROLL BAR-------------------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /*--------------------Responsiveness--------------------*/
