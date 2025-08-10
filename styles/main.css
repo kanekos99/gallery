@@ -170,4 +170,8 @@ hr.dashed {
   .footer-btn {
     width: 100%;
   }
+
+  .content-box {
+    padding: 0rem 1.5rem 1.5rem 1.5rem !important;
+  }
 }
