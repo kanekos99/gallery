@@ -117,10 +117,30 @@ hr.dashed {
 
 .chibi-gallery-thumbnail {
   display: block;
-  width: 11.25rem;
-  height: 11.25rem;
+  width: 12.5rem;
+  height: 12.5rem;
   object-fit: cover;
   object-position: center;
   margin: 2px;
   cursor: pointer;
+}
+
+.footer-buttons {
+  padding: 0px 0px 0px 0px !important;
+}
+
+.footer-btn {
+  background-color: white;
+  border: 3px solid #67a9a9;
+  border-radius: 25px;
+  color: #67a9a9;
+  text-transform: lowercase;
+  padding: 5px 15px 5px 15px;
+  font-size: 1.3rem;
+  max-width: 400px;
+  cursor: pointer;
+  margin-bottom: 7px;
+  font-family: afacad;
+  text-decoration: none;
+  min-width: 49%;
 }

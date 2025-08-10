@@ -36,28 +36,23 @@
     <div class="container">
       <div class="row justify-content-center px-3">
         <div
-          class="row justify-content-center content-box mt-5 pb-4 px-4"
-          id="home-section"
+          class="row justify-content-center content-box mt-5 pb-4 px-4 active"
+          id="home_section"
         >
           <img src="assets/confuse.png" class="site-img mt-4" />
           <h1 class="site-title my-3">Kaneko's Gallery</h1>
           <a
-            href="#original"
             class="main-btn d-flex justify-content-between align-items-center"
+            onclick="jumpToSection('#original');"
           >
             <span>original art</span>
             <i class="fa fa-paint-brush btn-icon" aria-hidden="true"></i>
           </a>
-          <a
-            href="#fanart"
-            class="main-btn d-flex justify-content-between align-items-center"
-          >
+          <a class="main-btn d-flex justify-content-between align-items-center">
             <span>fan art</span>
             <i class="fa fa-gamepad" aria-hidden="true"></i>
           </a>
-          <a
-            href="#sketches"
-            class="main-btn d-flex justify-content-between align-items-center"
+          <a class="main-btn d-flex justify-content-between align-items-center"
             ><span>sketches</span>
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </a>
@@ -71,7 +66,8 @@
         </div>
         <div
           class="row justify-content-center content-box my-5 pb-4 px-5"
-          id="original-section"
+          id="original"
+          style="display: none"
         >
           <h1 class="site-heading mt-5">Original Art</h1>
           <hr class="dashed mt-3" />
@@ -84,21 +80,36 @@
           ></div>
           <hr class="dashed mt-3" />
 
-          <div class="sub-heading row justify-content-center">
-            chibis
-          </div>
+          <div class="sub-heading row justify-content-center">chibis</div>
           <div
             class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
             id="original_chibis_gallery"
           ></div>
           <hr class="dashed mt-3" />
 
-          <p class="small-text">
-            Made by
-            <a href="https://github.com/kanekos99" class="small-text"
-              >kanekos99</a
+          <div
+            class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+          >
+            <button class="footer-btn px-3" onclick="backToHome();">
+              <div
+                class="d-flex flex-row justify-content-between align-items-center"
+              >
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <span>back</span>
+              </div>
+            </button>
+            <button
+              class="footer-btn px-3"
+              onclick="window.scrollTo({top:0,behavior:'smooth'})"
             >
-          </p>
+              <div
+                class="d-flex flex-row justify-content-between align-items-center"
+              >
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                <span>top</span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>

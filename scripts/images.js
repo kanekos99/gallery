@@ -1,7 +1,7 @@
 const original_illustrations = [
   "./assets/artwork/original/illustrations/Audrin_Pfp_v2.png",
   "./assets/artwork/original/illustrations/Qiu_Ye_Card_Colour Edit.png",
-  "./assets/artwork/original/illustrations/Qiu_Ye_Card_Back.png",
+  "./assets/artwork/original/illustrations/Qiu_Ye_Card_Back.PNG",
   "./assets/artwork/original/illustrations/qiu_ye_11.gif",
   "./assets/artwork/original/illustrations/qiu_ye_8.png",
   "./assets/artwork/original/illustrations/Shapeshifter_1.png",
