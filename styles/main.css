@@ -8,6 +8,7 @@
   src: url("../assets/fonts/Afacad-Bold.ttf");
 }
 
+html,
 body {
   min-height: 100svh;
   margin: 0;
@@ -292,7 +293,7 @@ hr.dashed {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */
