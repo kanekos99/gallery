@@ -279,11 +279,13 @@ hr.dashed {
 }
 
 #modal-loader {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  width: 3rem;
-  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /*--------------------Responsiveness--------------------*/
@@ -305,5 +307,4 @@ hr.dashed {
   .content-box {
     padding: 0rem 1.5rem 1.5rem 1.5rem !important;
   }
-
 }
