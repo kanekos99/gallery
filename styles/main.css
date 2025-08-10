@@ -8,7 +8,6 @@
   src: url("../assets/fonts/Afacad-Bold.ttf");
 }
 
-html,
 body {
   min-height: 100svh;
   margin: 0;
@@ -203,17 +202,14 @@ hr.dashed {
 /*-----------------------Modal----------------------------*/
 
 .modal-open {
-  padding-right: 0px !important;
+  padding-right: 15px !important;
   overflow: hidden !important;
-  height: 100%;
-  position: fixed;
+  height: 100% !important;
 }
 
 .modal {
   padding-right: 0px !important;
   scrollbar-width: none;
-  -ms-overflow-style: none;
-  overflow: hidden;
   --bs-modal-width: 800px;
   cursor: pointer;
   color: white;
@@ -221,10 +217,8 @@ hr.dashed {
 }
 
 .modal.show {
-  height: 100vh;
+  max-height: 100vh;
   display: flex !important;
-  align-items: center;
-  justify-content: center;
 }
 
 .modal-content {
@@ -311,4 +305,5 @@ hr.dashed {
   .content-box {
     padding: 0rem 1.5rem 1.5rem 1.5rem !important;
   }
+
 }
