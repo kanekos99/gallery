@@ -243,11 +243,13 @@
         data-bs-dismiss="modal"
         aria-label="Close"
       ></i>
-      <i
-        class="fa fa-chevron-left modal-arrow modal-arrow-left"
-        aria-hidden="true"
-        onclick="showNextOrPrevImg(-1);"
-      ></i>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-left modal-arrow modal-arrow-left"
+          aria-hidden="true"
+          onclick="showNextOrPrevImg(-1);"
+        ></i>
+      </div>
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="d-flex flex-row justify-content-center modal-row">
@@ -255,11 +257,13 @@
           </div>
         </div>
       </div>
-      <i
-        class="fa fa-chevron-right modal-arrow modal-arrow-right"
-        aria-hidden="true"
-        onclick="showNextOrPrevImg(1);"
-      ></i>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-right modal-arrow modal-arrow-right"
+          aria-hidden="true"
+          onclick="showNextOrPrevImg(1);"
+        ></i>
+      </div>
     </div>
 
     <script src="scripts/images.js"></script>

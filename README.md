@@ -1,11 +1,11 @@
 # gallery
 Simple art portfolio website inspired by carrd
 
-## TO-DO:
-* Fix bug with location hash showing when page is refreshed
+## TO-DO and Bugs:
 * Think of how to load sections dynamically
 * Add some css animations for buttons etc.
 * Add character design sub category
+* Horizontal mobile view
 
 This is really horrible and only for my own reference, please ignore. 
 
