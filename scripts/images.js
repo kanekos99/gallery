@@ -1,4 +1,4 @@
-const sections = ["#original", "#fanart", "#sketches"];
+const sections = ["#original", "#fanart", "#sketches", "#comics"];
 
 //------------------------------------------------------Original-----------------------------------------------//
 
@@ -70,4 +70,17 @@ const sketches = [
   "./assets/artwork/sketches/nikhil.png",
   "./assets/artwork/sketches/Gun.png",
   "./assets/artwork/sketches/markus.png",
+];
+
+//------------------------------------------------------Comics-----------------------------------------------//
+
+const xuehua_comic = [
+  "./assets/artwork/comics/xue_hua/Comic_Page_1.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_2.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_3.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_4.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_5.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_6.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_7.png",
+  "./assets/artwork/comics/xue_hua/Comic_Page_8.png",
 ];

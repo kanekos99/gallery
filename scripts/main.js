@@ -18,6 +18,9 @@ const fanart_sticker_sheets_gallery = $(fanart_sticker_sheets_gallery_name);
 const sketches_gallery_name = "#sketches_gallery";
 const sketches_gallery = $(sketches_gallery_name);
 
+const comics_xuehua_gallery_name = "#comics_xuehua_gallery";
+const comics_xuehua_gallery = $(comics_xuehua_gallery_name);
+
 //-------------------- sub categories-------------------------//
 
 const modalImg = document.getElementById("modal-image");
@@ -47,6 +50,11 @@ const imageCategories = [
     categoryArray: sketches,
     categoryElementId: sketches_gallery,
     categoryName: "sketches",
+  },
+  {
+    categoryArray: xuehua_comic,
+    categoryElementId: comics_xuehua_gallery,
+    categoryName: "xuehua_comic",
   },
 ];
 
@@ -117,7 +125,7 @@ function handleHashChange() {
 
 $(window).on("hashchange", handleHashChange);
 window.addEventListener("DOMContentLoaded", () => {
-  const currentHash = window.location.hash; 
+  const currentHash = window.location.hash;
   handleHashChange(currentHash);
 });
 
