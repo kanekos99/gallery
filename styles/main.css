@@ -67,6 +67,11 @@ body {
   margin-bottom: 7px;
   font-family: afacad;
   text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #558b8b;
 }
 
 .main-btn-icon {
@@ -117,6 +122,7 @@ hr.dashed {
   object-position: 25% 12%;
   margin: 2px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .chibi-gallery-thumbnail {
@@ -127,6 +133,12 @@ hr.dashed {
   object-position: center;
   margin: 2px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-thumbnail:hover,
+.chibi-gallery-thumbnail:hover {
+  transform: scale(1.05);
 }
 
 .gallery-loader {
@@ -342,5 +354,11 @@ hr.dashed {
 
   .content-box {
     padding: 0rem 1.5rem 1.5rem 1.5rem !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  html {
+    overflow-x: unset;
   }
 }
