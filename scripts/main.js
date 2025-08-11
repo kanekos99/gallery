@@ -106,8 +106,6 @@ function backToHome() {
   location.hash = "";
 }
 
-$(window).on("hashchange", handleHashChange);
-
 function handleHashChange() {
   if (sections.includes(window.location.hash)) {
     const selectedSection = window.location.hash;
@@ -116,6 +114,12 @@ function handleHashChange() {
     backToHome();
   }
 }
+
+$(window).on("hashchange", handleHashChange);
+window.addEventListener("DOMContentLoaded", () => {
+  const currentHash = window.location.hash; 
+  handleHashChange(currentHash);
+});
 
 function showNextOrPrevImg(direction) {
   const visibleImages = $("img:visible").not("#modal-image").toArray();
