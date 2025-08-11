@@ -6,7 +6,7 @@ const original_illustrations = [
   "./assets/artwork/original/illustrations/Tarot_Colour.png",
   "./assets/artwork/original/illustrations/Audrin_Pfp_v2.png",
   "./assets/artwork/original/illustrations/Qiu_Ye_Card_Colour Edit.png",
-  "./assets/artwork/original/illustrations/Qiu_Ye_Card_Back.png",
+  "./assets/artwork/original/illustrations/Qiu_Ye_Card_Back.PNG",
   "./assets/artwork/original/illustrations/qiu_ye_11.gif",
   "./assets/artwork/original/illustrations/qiu_ye_8.png",
   "./assets/artwork/original/illustrations/Shapeshifter_1.png",
@@ -31,7 +31,7 @@ const original_chibis = [
   "./assets/artwork/original/chibis/design_1.png",
   "./assets/artwork/original/chibis/Loren_Chibi_Doodle.png",
   "./assets/artwork/original/chibis/Elphiem_Chibi_Doodle.png",
-  "./assets/artwork/original/chibis/Ylene_Chibi_Doodle.png",
+  "./assets/artwork/original/chibis/Ylene_Chibi_Doodle.PNG",
 ];
 
 const original_character_designs = [
@@ -105,8 +105,8 @@ const sketches = [
   "./assets/artwork/sketches/elm.png",
   "./assets/artwork/sketches/Florence.png",
   "./assets/artwork/sketches/lilith.png",
-  "./assets/artwork/sketches/sol.png",
-  "./assets/artwork/sketches/allie_sketch.png",
+  "./assets/artwork/sketches/sol.PNG",
+  "./assets/artwork/sketches/allie_sketch.PNG",
   "./assets/artwork/sketches/baby_az.png",
   "./assets/artwork/sketches/fei_casual.png",
   "./assets/artwork/sketches/az_gun.png",
