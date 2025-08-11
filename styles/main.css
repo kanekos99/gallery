@@ -26,6 +26,7 @@ body {
       rgba(237, 208, 159, 1) 0%,
       rgba(171, 215, 216, 1) 60%
     );
+  background-attachment: fixed;
 }
 
 .container {

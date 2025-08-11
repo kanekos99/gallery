@@ -9,6 +9,12 @@ const original_illustration_gallery = $(original_illustration_gallery_name);
 const original_chibis_gallery_name = "#original_chibis_gallery";
 const original_chibis_gallery = $(original_chibis_gallery_name);
 
+const original_character_designs_gallery_name =
+  "#original_character_designs_gallery";
+const original_character_designs_gallery = $(
+  original_character_designs_gallery_name
+);
+
 const fanart_illustrations_gallery_name = "#fanart_illustrations_gallery";
 const fanart_illustrations_gallery = $(fanart_illustrations_gallery_name);
 
@@ -35,6 +41,11 @@ const imageCategories = [
     categoryArray: original_chibis,
     categoryElementId: original_chibis_gallery,
     categoryName: "original_chibis",
+  },
+  {
+    categoryArray: original_character_designs,
+    categoryElementId: original_character_designs_gallery,
+    categoryName: "original_character_designs",
   },
   {
     categoryArray: fanart_illustrations,
@@ -90,11 +101,10 @@ function loadImages() {
       //   data-bs-target="#galleryModal"
       // />`;
 
-
       //Lazy Load Option 2 - no small image placeholder
       const imageThumbnailHTML = `
       <img
-        data-src="${image}"
+        src="${image}"
         loading="lazy"
         class="${galleryClass} img-fluid"
         onclick="showImage(this.src)"
@@ -124,10 +134,9 @@ function loadImages() {
 document
   .querySelectorAll("img.gallery-thumbnail, img.chibi-gallery-thumbnail")
   .forEach((img) => {
-    img.style.opacity = 0.3; // start hidden
-    img.src = img.dataset.src; // trigger loading
+    img.style.opacity = 0; // start hidden
     img.addEventListener("load", () => {
-      img.style.transition = "opacity 0.5s ease";
+      img.style.transition = "opacity 0.7s ease";
       img.style.opacity = 1; // fade in once loaded
     });
   });

@@ -131,7 +131,7 @@ Example:
 
 4. Follow steps for "How to add new sub-category" for any sub-categories required
 
-## FFMEG command to create small images
+## FFMPEG command to create small images
 
 I'm not actually using this anymore but this is just here for future reference
 
@@ -139,3 +139,8 @@ I'm not actually using this anymore but this is just here for future reference
 for %j in ("C:\<your-path>\*.png") do ( ffmpeg -i "%j" -vf scale=20:-1 "C:\<your-path>\small\%~nj.png" )
 ```
 Create the ``small`` folder first
+
+Single resize command
+```
+ffmpeg -i imageName.jpg -vf scale=20:-1 imageName-small.jpg
+```
