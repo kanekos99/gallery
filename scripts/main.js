@@ -61,7 +61,6 @@ const imageCategories = [
 const app = {
   init: function () {
     loadImages();
-    hideLoadingScreen();
   },
 };
 
@@ -78,9 +77,25 @@ function loadImages() {
         galleryClass = "chibi-gallery-thumbnail";
       }
 
+      //Lazy Load Option 1 - using small image placeholder
+      //const smallImage = image.replace(/(.*\/)([^\/]+)$/, "$1small/$2");
+      // const imageThumbnailHTML = `
+      // <img
+      //   src="${smallImage}"
+      //   data-src="${image}"
+      //   loading="lazy"
+      //   class="${galleryClass} img-fluid"
+      //   onclick="showImage(this.src)"
+      //   data-bs-toggle="modal"
+      //   data-bs-target="#galleryModal"
+      // />`;
+
+
+      //Lazy Load Option 2 - no small image placeholder
       const imageThumbnailHTML = `
       <img
-        src="${image}"
+        data-src="${image}"
+        loading="lazy"
         class="${galleryClass} img-fluid"
         onclick="showImage(this.src)"
         data-bs-toggle="modal"
@@ -91,6 +106,31 @@ function loadImages() {
     });
   });
 }
+
+//Lazy Load Option 1 - using small image placeholder
+// document
+//   .querySelectorAll("img.gallery-thumbnail, img.chibi-gallery-thumbnail")
+//   .forEach((img) => {
+//     if (img.complete) {
+//       img.src = img.dataset.src;
+//     } else {
+//       img.addEventListener("load", () => {
+//         img.src = img.dataset.src;
+//       });
+//     }
+//   });
+
+//Lazy Load Option 2 - no small image placeholder
+document
+  .querySelectorAll("img.gallery-thumbnail, img.chibi-gallery-thumbnail")
+  .forEach((img) => {
+    img.style.opacity = 0.3; // start hidden
+    img.src = img.dataset.src; // trigger loading
+    img.addEventListener("load", () => {
+      img.style.transition = "opacity 0.5s ease";
+      img.style.opacity = 1; // fade in once loaded
+    });
+  });
 
 function jumpToSection(sectionId) {
   const selectedSection = $(sectionId);
@@ -149,35 +189,4 @@ function showImage(src) {
   modalImg.onload = function () {
     modalImg.style.display = "block";
   };
-}
-
-function hideLoadingScreen() {
-  const images = document.querySelectorAll(
-    ".gallery-thumbnail, .chibi-gallery-thumbnail"
-  ); // your gallery images
-  let loadedCount = 0;
-
-  if (images.length === 0) {
-    // no images, hide immediately
-    document.getElementById("loading-screen").style.display = "none";
-    return;
-  }
-
-  images.forEach((img) => {
-    // If image already loaded (from cache), count immediately
-    if (img.complete && img.naturalHeight !== 0) {
-      loadedCount++;
-      if (loadedCount === images.length) {
-        document.getElementById("loading-screen").style.display = "none";
-      }
-    } else {
-      // listen for load event
-      img.addEventListener("load", () => {
-        loadedCount++;
-        if (loadedCount === images.length) {
-          document.getElementById("loading-screen").style.display = "none";
-        }
-      });
-    }
-  });
 }
