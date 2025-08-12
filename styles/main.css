@@ -181,7 +181,6 @@ hr.dashed {
 
 .modal.show {
   max-height: 100vh;
-  display: flex !important;
 }
 
 .modal-content {
