@@ -13,6 +13,7 @@
     />
 
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../common/styles/sidemenu.css" /> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script
@@ -33,256 +34,268 @@
     <link rel="icon" type="image/x-icon" href="./assets/confuse.png" />
   </head>
   <body>
-    <div class="container">
-      <div class="row justify-content-center px-3">
-        <!----------------------------------------------Home Page---------------------------------------------------------->
-        <div
-          class="row justify-content-center content-box pb-4 px-4 active"
-          id="home_section"
-        >
-          <img src="assets/confuse.png" class="site-img mt-4" />
-          <h1 class="site-title my-3">Kaneko's Gallery</h1>
-          <a
-            class="main-btn d-flex justify-content-between align-items-center"
-            onclick="jumpToSection('#original');"
+    <div class="main-body" id="main-body">
+
+      <!--------------------------Neocities Side menu-------------------------------->
+      <!-- <div class="menu-icon-container">
+        <i class="fa fa-bars menu-icon shadow" onClick="toggleSideMenu();"></i>
+      </div> -->
+
+      <div class="container mt-4">
+        <div class="row justify-content-center px-4">
+          <!----------------------------------------------Home Page---------------------------------------------------------->
+          <div
+            class="row justify-content-center content-box pb-4 px-4 active"
+            id="home_section"
           >
-            <span>original art</span>
-            <i class="fa fa-paint-brush btn-icon" aria-hidden="true"></i>
-          </a>
-          <a
-            class="main-btn d-flex justify-content-between align-items-center"
-            onclick="jumpToSection('#fanart');"
-          >
-            <span>fan art</span>
-            <i class="fa fa-gamepad" aria-hidden="true"></i>
-          </a>
-          <a
-            class="main-btn d-flex justify-content-between align-items-center"
-            onclick="jumpToSection('#sketches');"
-          >
-            <span>sketches</span>
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-          </a>
-          <a
-            class="main-btn d-flex justify-content-between align-items-center"
-            onclick="jumpToSection('#comics');"
-          >
-            <span>comics</span>
-            <i class="fa fa-book" aria-hidden="true"></i>
-          </a>
-          <hr class="dashed main-divider mt-3" />
-          <p class="small-text">
-            Made by
-            <a href="https://github.com/kanekos99" class="small-text"
-              >kanekos99</a
+            <img src="assets/confuse.png" class="site-img mt-4" />
+            <h1 class="site-title my-3">Kaneko's Gallery</h1>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#original');"
             >
-          </p>
-        </div>
-        <!----------------------------------------------Original Artwork----------------------------------------------------->
-        <div
-          class="row justify-content-center content-box mb-5 pb-4 px-5"
-          id="original"
-          style="display: none"
-        >
-          <h1 class="site-heading mt-5">Original Art</h1>
-          <hr class="dashed mt-3" />
-          <!-------------------------------Sub-categories start--------------------------------------->
-          <div class="sub-heading row justify-content-center">
-            illustrations
-          </div>
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="original_illustration_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <div class="sub-heading row justify-content-center">character designs</div>
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="original_character_designs_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <div class="sub-heading row justify-content-center">chibis</div>
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="original_chibis_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <!-------------------------------Sub-categories start--------------------------------------->
-
-          <!-----------------------------------Footer--------------------------------------------->
-          <div
-            class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
-          >
-            <button class="footer-btn px-3" onclick="backToHome();">
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                <span>back</span>
-              </div>
-            </button>
-            <button
-              class="footer-btn px-3"
-              onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              <span>original art</span>
+              <i class="fa fa-paint-brush btn-icon" aria-hidden="true"></i>
+            </a>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#fanart');"
             >
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                <span>top</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!----------------------------------------------Fan Art----------------------------------------------------->
-        <div
-          class="row justify-content-center content-box mb-5 pb-4 px-5"
-          id="fanart"
-          style="display: none"
-        >
-          <h1 class="site-heading mt-5">Fan Art</h1>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories start----------------------------->
-          <div class="sub-heading row justify-content-center">
-            illustrations
-          </div>
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="fanart_illustrations_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <div class="sub-heading row justify-content-center">
-            sticker sheets
-          </div>
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="fanart_sticker_sheets_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories end----------------------------->
-
-          <!---------------------------Footer----------------------------->
-          <div
-            class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
-          >
-            <button class="footer-btn px-3" onclick="backToHome();">
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                <span>back</span>
-              </div>
-            </button>
-            <button
-              class="footer-btn px-3"
-              onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              <span>fan art</span>
+              <i class="fa fa-gamepad" aria-hidden="true"></i>
+            </a>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#sketches');"
             >
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                <span>top</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!----------------------------------------------Sketches----------------------------------------------------->
-        <div
-          class="row justify-content-center content-box mb-5 pb-4 px-5"
-          id="sketches"
-          style="display: none"
-        >
-          <h1 class="site-heading mt-5">Sketches</h1>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories start----------------------------->
-          <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="sketches_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories end----------------------------->
-
-          <!---------------------------Footer----------------------------->
-          <div
-            class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
-          >
-            <button class="footer-btn px-3" onclick="backToHome();">
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                <span>back</span>
-              </div>
-            </button>
-            <button
-              class="footer-btn px-3"
-              onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              <span>sketches</span>
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#comics');"
             >
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
+              <span>comics</span>
+              <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+            <hr class="dashed main-divider mt-3" />
+            <p class="small-text">
+              Made by
+              <a href="https://github.com/kanekos99" class="small-text"
+                >kanekos99</a
               >
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                <span>top</span>
-              </div>
-            </button>
+            </p>
           </div>
-        </div>
-
-        <!----------------------------------------------Comics----------------------------------------------------->
-        <div
-          class="row justify-content-center content-box mb-5 pb-4 px-5"
-          id="comics"
-          style="display: none"
-        >
-          <h1 class="site-heading mt-5">Comics</h1>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories start----------------------------->
-          <div class="sub-heading row justify-content-center">tribute</div>
+          <!----------------------------------------------Original Artwork----------------------------------------------------->
           <div
-            class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-            id="comics_xuehua_gallery"
-          ></div>
-          <hr class="dashed mt-3" />
-
-          <!---------------------------Sub-categories end----------------------------->
-
-          <!---------------------------Footer----------------------------->
-          <div
-            class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="original"
+            style="display: none"
           >
-            <button class="footer-btn px-3" onclick="backToHome();">
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
-              >
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                <span>back</span>
-              </div>
-            </button>
-            <button
-              class="footer-btn px-3"
-              onclick="window.scrollTo({top:0,behavior:'smooth'})"
+            <h1 class="site-heading mt-5">Original Art</h1>
+            <hr class="dashed mt-3" />
+            <!-------------------------------Sub-categories start--------------------------------------->
+            <div class="sub-heading row justify-content-center">
+              illustrations
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="original_illustration_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <div class="sub-heading row justify-content-center">
+              character designs
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="original_character_designs_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <div class="sub-heading row justify-content-center">chibis</div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="original_chibis_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <!-------------------------------Sub-categories start--------------------------------------->
+
+            <!-----------------------------------Footer--------------------------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
             >
-              <div
-                class="d-flex flex-row justify-content-between align-items-center"
+              <button class="footer-btn px-3" onclick="backToHome();">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({top:0,behavior:'smooth'})"
               >
-                <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                <span>top</span>
-              </div>
-            </button>
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!----------------------------------------------Fan Art----------------------------------------------------->
+          <div
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="fanart"
+            style="display: none"
+          >
+            <h1 class="site-heading mt-5">Fan Art</h1>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories start----------------------------->
+            <div class="sub-heading row justify-content-center">
+              illustrations
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="fanart_illustrations_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <div class="sub-heading row justify-content-center">
+              sticker sheets
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="fanart_sticker_sheets_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories end----------------------------->
+
+            <!---------------------------Footer----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            >
+              <button class="footer-btn px-3" onclick="backToHome();">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              >
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!----------------------------------------------Sketches----------------------------------------------------->
+          <div
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="sketches"
+            style="display: none"
+          >
+            <h1 class="site-heading mt-5">Sketches</h1>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories start----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="sketches_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories end----------------------------->
+
+            <!---------------------------Footer----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            >
+              <button class="footer-btn px-3" onclick="backToHome();">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              >
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!----------------------------------------------Comics----------------------------------------------------->
+          <div
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="comics"
+            style="display: none"
+          >
+            <h1 class="site-heading mt-5">Comics</h1>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories start----------------------------->
+            <div class="sub-heading row justify-content-center">tribute</div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="comics_xuehua_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories end----------------------------->
+
+            <!---------------------------Footer----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            >
+              <button class="footer-btn px-3" onclick="backToHome();">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+              >
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      <!----------------------------------------------Home Page---------------------------------------------------------->
     </div>
 
     <!-- Modal -->
@@ -321,6 +334,7 @@
       </div>
     </div>
 
+    <!-- <script src="../common/scripts/sidemenu.js"></script> -->
     <script src="scripts/images.js"></script>
     <script src="scripts/main.js"></script>
   </body>

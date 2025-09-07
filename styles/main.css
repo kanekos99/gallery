@@ -29,10 +29,6 @@ body {
   background-attachment: fixed;
 }
 
-.container {
-  margin-top: 25px;
-}
-
 .content-box {
   max-width: 720px;
   min-width: 300px;
@@ -304,6 +300,17 @@ hr.dashed {
   .content-box {
     padding: 0rem 1.5rem 1.5rem 1.5rem !important;
   }
+
+  /* .menu-icon-container {
+    position: absolute !important;
+    margin-top: 15px;
+  }
+
+  .menu-icon {
+    position: absolute !important;
+    margin-left: 10px !important;
+  } */
+
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
