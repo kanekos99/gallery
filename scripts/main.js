@@ -80,6 +80,11 @@ app.init();
 function loadImages() {
   imageCategories.forEach((category) => {
     category.categoryArray.forEach((image) => {
+
+      //FOR NEOCITIES GALLERY - REPLACE SRC WITH THIS URL INSTEAD
+      let externalUrl =
+        "https://kanekos99.github.io/gallery" + image.substring(1);
+        
       let galleryClass = "gallery-thumbnail";
       if (
         category.categoryName === "original_chibis" ||
