@@ -20,6 +20,7 @@ const original_illustrations = [
 ];
 
 const original_chibis = [
+  "./assets/artwork/original/chibis/qiuye_tail_wag.png",
   "./assets/artwork/original/chibis/Standee.png",
   "./assets/artwork/original/chibis/tail_wag.png",
   "./assets/artwork/original/chibis/az.png",
@@ -35,6 +36,11 @@ const original_chibis = [
 ];
 
 const original_character_designs = [
+  "./assets/artwork/original/character_designs/han-an.png",
+  "./assets/artwork/original/character_designs/feo.png",
+  "./assets/artwork/original/character_designs/ghost.png",
+  "./assets/artwork/original/character_designs/xilan.png",
+  "./assets/artwork/original/character_designs/han_an_modern.png",
   "./assets/artwork/original/character_designs/elphiem.png",
   "./assets/artwork/original/character_designs/ira.png",
   "./assets/artwork/original/character_designs/Loren.png",
@@ -92,6 +98,8 @@ const fanart_sticker_sheets = [
 //------------------------------------------------------Sketches-----------------------------------------------//
 
 const sketches = [
+  "./assets/artwork/sketches/asylum.png",
+  "./assets/artwork/sketches/florence_child.jpg",
   "./assets/artwork/sketches/loren.png",
   "./assets/artwork/sketches/ira.png",
   "./assets/artwork/sketches/gael.png",
@@ -126,4 +134,14 @@ const xuehua_comic = [
   "./assets/artwork/comics/xue_hua/Comic_Page_6.png",
   "./assets/artwork/comics/xue_hua/Comic_Page_7.png",
   "./assets/artwork/comics/xue_hua/Comic_Page_8.png",
+];
+
+const childhood_dream_comic = [
+  "./assets/artwork/comics/childhood_dream/childhood_dream_1.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_2.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_3.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_4.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_5.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_6.png",
+  "./assets/artwork/comics/childhood_dream/childhood_dream_7.png",
 ];

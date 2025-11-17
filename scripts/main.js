@@ -27,6 +27,9 @@ const sketches_gallery = $(sketches_gallery_name);
 const comics_xuehua_gallery_name = "#comics_xuehua_gallery";
 const comics_xuehua_gallery = $(comics_xuehua_gallery_name);
 
+const comics_childhood_dream_gallery_name = "#comics_childhood_dream_gallery";
+const comics_childhood_dream_gallery = $(comics_childhood_dream_gallery_name);
+
 //-------------------- sub categories-------------------------//
 
 const modalImg = document.getElementById("modal-image");
@@ -67,6 +70,11 @@ const imageCategories = [
     categoryElementId: comics_xuehua_gallery,
     categoryName: "xuehua_comic",
   },
+  {
+    categoryArray: childhood_dream_comic,
+    categoryElementId: comics_childhood_dream_gallery,
+    categoryName: "childhood_dream_comic",
+  },
 ];
 
 const app = {
@@ -80,11 +88,10 @@ app.init();
 function loadImages() {
   imageCategories.forEach((category) => {
     category.categoryArray.forEach((image) => {
-
       //FOR NEOCITIES GALLERY - REPLACE SRC WITH THIS URL INSTEAD
       let externalUrl =
         "https://kanekos99.github.io/gallery" + image.substring(1);
-        
+
       let galleryClass = "gallery-thumbnail";
       if (
         category.categoryName === "original_chibis" ||
