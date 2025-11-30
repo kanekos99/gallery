@@ -20,19 +20,20 @@ mkdir "assets" 2>nul
 
 REM Step 1: Cherry-pick without committing
 git cherry-pick %COMMIT% --no-commit
-IF ERRORLEVEL 1 (
-    echo Resolving conflicts automatically...
 
-    REM Stage all existing files in public/gallery/assets/ (keep moved files)
+IF ERRORLEVEL 1 (
+    echo Resolving rename/delete conflicts automatically...
+
+    REM Stage all normal moved files
     for /R public\gallery\assets %%F in (*) do (
         git add "%%F"
     )
 
-    REM Check git status for deleted files from conflicts
-    for /F "tokens=1,* delims= " %%A in ('git status --porcelain') do (
-        REM If file is deleted in HEAD (UD), remove it
-        if "%%A"=="UD" (
-            git rm "%%B"
+    REM Automatically remove files deleted in the cherry-picked commit
+    for /F "delims=" %%F in ('git diff-tree --no-commit-id --name-status -r %COMMIT% ^| findstr /B "D"') do (
+        for /F "tokens=2" %%A in ("%%F") do (
+            git rm "public/gallery/%%A" 2>nul
+            echo Deleted: public/gallery/assets/%%A
         )
     )
 )
