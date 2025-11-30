@@ -116,7 +116,7 @@ function loadImages() {
       //Lazy Load Option 2 - no small image placeholder
       const imageThumbnailHTML = `
       <img
-        src="${image}"
+        src="${externalUrl}"
         loading="lazy"
         class="${galleryClass} img-fluid"
         onclick="showImage(this.src)"
