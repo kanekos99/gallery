@@ -144,3 +144,9 @@ Single resize command
 ```
 ffmpeg -i imageName.jpg -vf scale=20:-1 imageName-small.jpg
 ```
+
+## CUSTOM cherry-pick script for neocities deployment
+
+```
+cherrypick.bat <hash>
+```
