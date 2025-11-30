@@ -20,6 +20,7 @@ const original_illustrations = [
 ];
 
 const original_chibis = [
+  "./assets/artwork/original/chibis/adopt_raffle.png",
   "./assets/artwork/original/chibis/qiuye_tail_wag.png",
   "./assets/artwork/original/chibis/Standee.png",
   "./assets/artwork/original/chibis/tail_wag.png",
