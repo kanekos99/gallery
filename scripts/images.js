@@ -99,6 +99,7 @@ const fanart_sticker_sheets = [
 //------------------------------------------------------Sketches-----------------------------------------------//
 
 const sketches = [
+  "./assets/artwork/sketches/artist.png",
   "./assets/artwork/sketches/asylum.png",
   "./assets/artwork/sketches/florence_child.jpg",
   "./assets/artwork/sketches/loren.png",
