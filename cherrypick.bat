@@ -15,11 +15,14 @@ setlocal enabledelayedexpansion
 
 echo Cherry-picking commit %COMMIT% with gallery/* remapped to public/gallery/*
 
+REM Step 0.5: Make sure assets folder exists in Git root
+mkdir "assets" 2>nul
+
 REM Step 1: Cherry-pick without committing
 git cherry-pick %COMMIT% --no-commit
 IF ERRORLEVEL 1 (
-    echo Cherry-pick failed! Resolve conflicts manually.
-    exit /b 1
+    for /R public\gallery\assets %%F in (*) do (
+    git add "%%F")
 )
 
 REM Step 2: Make destination folder
