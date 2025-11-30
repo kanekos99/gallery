@@ -39,11 +39,15 @@ for /R gallery %%F in (*) do (
     move "%%F" "public\gallery\!REL!" >nul
 )
 
-REM Step 4: Remove old gallery/ paths from staging
+REM Step 4: Delete assets folder
+rd /s /q "assets"
+
+REM Step 5: Remove old gallery/ paths from staging
 git reset HEAD gallery
 
-REM Step 5: Stage new paths
+REM Step 6: Stage new paths
 git add public/gallery
+
 
 endlocal
 echo Done! 

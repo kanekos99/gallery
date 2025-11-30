@@ -147,4 +147,3 @@ const childhood_dream_comic = [
   "./assets/artwork/comics/childhood_dream/childhood_dream_6.png",
   "./assets/artwork/comics/childhood_dream/childhood_dream_7.png",
 ];
-
