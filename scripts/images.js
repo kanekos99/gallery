@@ -4,6 +4,7 @@ const sections = ["#original", "#fanart", "#sketches", "#comics"];
 
 const original_illustrations = [
   "./assets/artwork/original/illustrations/Az_card_front_v3.png",
+  "./assets/artwork/original/illustrations/Horrors.png",
   "./assets/artwork/original/illustrations/Title_Screen_BG.png",
   "./assets/artwork/original/illustrations/Title_Screen - Copy.png",
   "./assets/artwork/original/illustrations/smile.png",
