@@ -3,6 +3,7 @@ const sections = ["#original", "#fanart", "#sketches", "#comics"];
 //------------------------------------------------------Original-----------------------------------------------//
 
 const original_illustrations = [
+  "./assets/artwork/original/illustrations/Az_card_front_v3.png",
   "./assets/artwork/original/illustrations/Tarot_Colour.png",
   "./assets/artwork/original/illustrations/Audrin_Pfp_v2.png",
   "./assets/artwork/original/illustrations/Qiu_Ye_Card_Colour Edit.png",
