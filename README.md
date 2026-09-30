@@ -138,7 +138,12 @@ I'm not actually using this anymore but this is just here for future reference
 ```
 for %j in ("C:\<your-path>\*.png") do ( ffmpeg -i "%j" -vf scale=20:-1 "C:\<your-path>\small\%~nj.png" )
 ```
-Create the ``small`` folder first
+Alternatively, for making longest edge equal 1000px:
+```
+for %j in ("C:\<your-path>\*.png") do ( ffmpeg -i "%j" -vf "scale=1000:1000:force_original_aspect_ratio=decrease" "C:\<your-path>\small\%~nj.png" )
+
+```
+(Note: Create the ``small`` folder first)
 
 Single resize command
 ```

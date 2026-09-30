@@ -9,11 +9,11 @@ const original_illustration_gallery = $(original_illustration_gallery_name);
 const original_chibis_gallery_name = "#original_chibis_gallery";
 const original_chibis_gallery = $(original_chibis_gallery_name);
 
-const original_character_designs_gallery_name =
-  "#original_character_designs_gallery";
-const original_character_designs_gallery = $(
-  original_character_designs_gallery_name
-);
+const chara_refs_gallery_name = "#charas_refs_gallery";
+const charas_refs_gallery = $(chara_refs_gallery_name);
+
+const charas_drafts_gallery_name = "#charas_drafts_gallery";
+const charas_drafts_gallery = $(charas_drafts_gallery_name);
 
 const fanart_illustrations_gallery_name = "#fanart_illustrations_gallery";
 const fanart_illustrations_gallery = $(fanart_illustrations_gallery_name);
@@ -29,6 +29,9 @@ const comics_xuehua_gallery = $(comics_xuehua_gallery_name);
 
 const comics_childhood_dream_gallery_name = "#comics_childhood_dream_gallery";
 const comics_childhood_dream_gallery = $(comics_childhood_dream_gallery_name);
+
+const comics_snowy_day_name = "#comics_snowy_day_gallery";
+const comics_snowy_day_gallery = $(comics_snowy_day_name);
 
 //-------------------- sub categories-------------------------//
 
@@ -46,9 +49,14 @@ const imageCategories = [
     categoryName: "original_chibis",
   },
   {
-    categoryArray: original_character_designs,
-    categoryElementId: original_character_designs_gallery,
-    categoryName: "original_character_designs",
+    categoryArray: charas_refs,
+    categoryElementId: charas_refs_gallery,
+    categoryName: "charas_refs",
+  },
+  {
+    categoryArray: charas_drafts,
+    categoryElementId: charas_drafts_gallery,
+    categoryName: "charas_drafts",
   },
   {
     categoryArray: fanart_illustrations,
@@ -74,6 +82,11 @@ const imageCategories = [
     categoryArray: childhood_dream_comic,
     categoryElementId: comics_childhood_dream_gallery,
     categoryName: "childhood_dream_comic",
+  },
+  {
+    categoryArray: snowy_day_comic,
+    categoryElementId: comics_snowy_day_gallery,
+    categoryName: "snowy_day_comic",
   },
 ];
 

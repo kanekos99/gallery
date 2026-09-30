@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link
@@ -13,7 +13,11 @@
     />
 
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="../common/styles/sidemenu.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../common/styles/sidemenu.css"
+    />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script
@@ -36,46 +40,53 @@
   <body>
     <div class="main-body" id="main-body">
       <!--------------------------Neocities Side menu-------------------------------->
-      <!-- <div class="menu-icon-container">
+      <div class="menu-icon-container">
         <i class="fa fa-bars menu-icon shadow" onClick="toggleSideMenu();"></i>
-      </div> -->
+      </div>
 
       <div class="container mt-4">
         <div class="row justify-content-center px-4">
           <!----------------------------------------------Home Page---------------------------------------------------------->
           <div
-            class="row justify-content-center content-box pb-4 px-4 active"
+            class="row justify-content-center content-box px-4 active"
             id="home_section"
           >
             <img src="assets/confuse.png" class="site-img mt-4" />
             <h1 class="site-title my-3">Kaneko's Gallery</h1>
             <a
               class="main-btn d-flex justify-content-between align-items-center"
-              onclick="jumpToSection('#original');"
+              onclick="jumpToSection('#original')"
             >
               <span>original art</span>
               <i class="fa fa-paint-brush btn-icon" aria-hidden="true"></i>
             </a>
             <a
               class="main-btn d-flex justify-content-between align-items-center"
-              onclick="jumpToSection('#fanart');"
+              onclick="jumpToSection('#charas')"
             >
-              <span>fan art</span>
-              <i class="fa fa-gamepad" aria-hidden="true"></i>
+              <span>character designs</span>
+              <i class="fa fa-user" aria-hidden="true"></i>
             </a>
             <a
               class="main-btn d-flex justify-content-between align-items-center"
-              onclick="jumpToSection('#sketches');"
+              onclick="jumpToSection('#sketches')"
             >
               <span>sketches</span>
               <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
             <a
               class="main-btn d-flex justify-content-between align-items-center"
-              onclick="jumpToSection('#comics');"
+              onclick="jumpToSection('#comics')"
             >
               <span>comics</span>
               <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#fanart')"
+            >
+              <span>fan art</span>
+              <i class="fa fa-gamepad" aria-hidden="true"></i>
             </a>
             <hr class="dashed main-divider mt-3" />
             <p class="small-text">
@@ -85,7 +96,7 @@
               >
             </p>
           </div>
-          <!----------------------------------------------Original Artwork----------------------------------------------------->
+          <!----------------------------------------------Original Artwork------------------------------------------->
           <div
             class="row justify-content-center content-box mb-5 pb-4 px-5"
             id="original"
@@ -103,15 +114,6 @@
             ></div>
             <hr class="dashed mt-3" />
 
-            <div class="sub-heading row justify-content-center">
-              character designs
-            </div>
-            <div
-              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
-              id="original_character_designs_gallery"
-            ></div>
-            <hr class="dashed mt-3" />
-
             <div class="sub-heading row justify-content-center">chibis</div>
             <div
               class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
@@ -125,7 +127,7 @@
             <div
               class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
             >
-              <button class="footer-btn px-3" onclick="backToHome();">
+              <button class="footer-btn px-3" onclick="backToHome()">
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
@@ -135,7 +137,59 @@
               </button>
               <button
                 class="footer-btn px-3"
-                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+              >
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!----------------------------------------------Character Designs------------------------------------------->
+          <div
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="charas"
+            style="display: none"
+          >
+            <h1 class="site-heading mt-5">Character Designs</h1>
+            <hr class="dashed mt-3" />
+            <!-------------------------------Sub-categories start--------------------------------------->
+            <div class="sub-heading row justify-content-center">
+              reference sheets
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="charas_refs_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <div class="sub-heading row justify-content-center">
+              draft sketches
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="charas_drafts_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+            <!-----------------------------------Footer--------------------------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            >
+              <button class="footer-btn px-3" onclick="backToHome()">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
               >
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
@@ -181,7 +235,7 @@
             <div
               class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
             >
-              <button class="footer-btn px-3" onclick="backToHome();">
+              <button class="footer-btn px-3" onclick="backToHome()">
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
@@ -191,7 +245,7 @@
               </button>
               <button
                 class="footer-btn px-3"
-                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
               >
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
@@ -225,7 +279,7 @@
             <div
               class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
             >
-              <button class="footer-btn px-3" onclick="backToHome();">
+              <button class="footer-btn px-3" onclick="backToHome()">
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
@@ -235,7 +289,7 @@
               </button>
               <button
                 class="footer-btn px-3"
-                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
               >
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
@@ -263,10 +317,20 @@
               id="comics_xuehua_gallery"
             ></div>
             <hr class="dashed mt-3" />
-            <div class="sub-heading row justify-content-center">childhood dream</div>
+            <div class="sub-heading row justify-content-center">
+              childhood dream
+            </div>
             <div
               class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
               id="comics_childhood_dream_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+            <div class="sub-heading row justify-content-center">
+              plum blossoms in the snow
+            </div>
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="comics_snowy_day_gallery"
             ></div>
             <hr class="dashed mt-3" />
 
@@ -276,7 +340,7 @@
             <div
               class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
             >
-              <button class="footer-btn px-3" onclick="backToHome();">
+              <button class="footer-btn px-3" onclick="backToHome()">
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
                 >
@@ -286,7 +350,7 @@
               </button>
               <button
                 class="footer-btn px-3"
-                onclick="window.scrollTo({top:0,behavior:'smooth'})"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
               >
                 <div
                   class="d-flex flex-row justify-content-between align-items-center"
@@ -320,7 +384,7 @@
         <i
           class="fa fa-chevron-left modal-arrow modal-arrow-left"
           aria-hidden="true"
-          onclick="showNextOrPrevImg(-1);"
+          onclick="showNextOrPrevImg(-1)"
         ></i>
       </div>
       <div class="modal-dialog modal-dialog-centered">
@@ -334,12 +398,12 @@
         <i
           class="fa fa-chevron-right modal-arrow modal-arrow-right"
           aria-hidden="true"
-          onclick="showNextOrPrevImg(1);"
+          onclick="showNextOrPrevImg(1)"
         ></i>
       </div>
     </div>
 
-    <!-- <script src="../common/scripts/sidemenu.js"></script> -->
+    <script src="../common/scripts/sidemenu.js"></script>
     <script src="scripts/images.js"></script>
     <script src="scripts/main.js"></script>
   </body>
