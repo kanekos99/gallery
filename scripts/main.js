@@ -246,6 +246,7 @@ function showImage(src) {
 
 const videoYTLink = document.getElementById("video_yt_link");
 const videoModal = document.getElementById("videoModal");
+const videoBox = document.getElementById("video-box");
 
 function loadVideos() {
   animations.forEach((video) => {
@@ -279,6 +280,7 @@ function getVideoByName(video) {
 }
 
 function showVideo(videoName) {
+  videoBox.style.display = "none";
   modalVid.innerHTML = "";
   const targetVideo = animations.find(
     (animation) => animation.name === videoName,
@@ -295,6 +297,13 @@ function showVideo(videoName) {
   source.dataset.vidName = videoName;
   modalVid.appendChild(source);
   videoYTLink.href = targetVideo.yt_link;
+  modalVid.addEventListener(
+    "loadeddata",
+    () => {
+      videoBox.style.display = "block";
+    },
+    { once: true },
+  );
   modalVid.load();
 }
 
