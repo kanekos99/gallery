@@ -83,6 +83,13 @@
             </a>
             <a
               class="main-btn d-flex justify-content-between align-items-center"
+              onclick="jumpToSection('#animation')"
+            >
+              <span>animation</span>
+              <i class="fa fa-book" aria-hidden="true"></i>
+            </a>
+            <a
+              class="main-btn d-flex justify-content-between align-items-center"
               onclick="jumpToSection('#fanart')"
             >
               <span>fan art</span>
@@ -361,13 +368,57 @@
               </button>
             </div>
           </div>
+
+          <!----------------------------------------------Animations----------------------------------------------------->
+          <div
+            class="row justify-content-center content-box mb-5 pb-4 px-5"
+            id="animation"
+            style="display: none"
+          >
+            <h1 class="site-heading mt-5">Animations</h1>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories start----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-center mt-3 gallery-container"
+              id="animation_gallery"
+            ></div>
+            <hr class="dashed mt-3" />
+
+            <!---------------------------Sub-categories end----------------------------->
+
+            <!---------------------------Footer----------------------------->
+            <div
+              class="d-flex flex-row flex-wrap justify-content-between mt-2 footer-buttons"
+            >
+              <button class="footer-btn px-3" onclick="backToHome()">
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  <span>back</span>
+                </div>
+              </button>
+              <button
+                class="footer-btn px-3"
+                onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+              >
+                <div
+                  class="d-flex flex-row justify-content-between align-items-center"
+                >
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                  <span>top</span>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       <!----------------------------------------------Home Page---------------------------------------------------------->
     </div>
 
-    <!-- Modal -->
+    <!-- Image Modal -->
     <div
       class="modal fade"
       id="galleryModal"
@@ -399,6 +450,55 @@
           class="fa fa-chevron-right modal-arrow modal-arrow-right"
           aria-hidden="true"
           onclick="showNextOrPrevImg(1)"
+        ></i>
+      </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div
+      class="modal fade"
+      id="videoModal"
+      tabindex="-1"
+      aria-labelledby="video"
+    >
+      <i
+        class="fa fa-times-circle-o modal-cross"
+        aria-hidden="true"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></i>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-left modal-arrow modal-arrow-vid modal-arrow-left"
+          aria-hidden="true"
+          onclick="showNextOrPrevVid(-1)"
+        ></i>
+      </div>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-row">
+            <div class="video-container">
+              <video controls id="modal-video"></video>
+            </div>
+            <div class="row justify-content-end me-2">
+              <a
+                class="video-yt-btn"
+                href=""
+                id="video_yt_link"
+                target="_blank"
+              >
+                Watch on Youtube
+                <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-nav-container">
+        <i
+          class="fa fa-chevron-right modal-arrow modal-arrow-vid modal-arrow-right"
+          aria-hidden="true"
+          onclick="showNextOrPrevVid(1)"
         ></i>
       </div>
     </div>

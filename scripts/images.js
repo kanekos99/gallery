@@ -4,7 +4,7 @@ const sections = [
   "#fanart",
   "#sketches",
   "#comics",
-  "#animations",
+  "#animation",
 ];
 
 //------------------------------------------------------Original-----------------------------------------------//
@@ -181,4 +181,27 @@ const snowy_day_comic = [
   "./assets/artwork/comics/snowy_day/snow3.png",
   "./assets/artwork/comics/snowy_day/snow4.png",
   "./assets/artwork/comics/snowy_day/snow1.png",
+];
+
+//------------------------------------------------------Animation-----------------------------------------------//
+
+const animations = [
+  {
+    name: "competent",
+    thumbnail: "./assets/artwork/animations/competent.png",
+    link: "./assets/artwork/animations/videos/competent.mp4",
+    yt_link: "https://www.youtube.com/watch?v=RCoTLcAqqK8",
+  },
+  {
+    name: "dont_trust_castor",
+    thumbnail: "./assets/artwork/animations/castor.png",
+    link: "./assets/artwork/animations/videos/dont_trust_castor.mp4",
+    yt_link: "https://www.youtube.com/watch?v=5K52YNyby-4",
+  },
+  {
+    name: "blue",
+    thumbnail: "./assets/artwork/animations/blue.png",
+    link: "./assets/artwork/animations/videos/blue.mp4",
+    yt_link: "https://www.youtube.com/watch?v=Wj1lYsHGVVQ"
+  },
 ];

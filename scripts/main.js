@@ -33,9 +33,13 @@ const comics_childhood_dream_gallery = $(comics_childhood_dream_gallery_name);
 const comics_snowy_day_name = "#comics_snowy_day_gallery";
 const comics_snowy_day_gallery = $(comics_snowy_day_name);
 
+const animation_gallery_name = "#animation_gallery";
+const animation_gallery = $(animation_gallery_name);
+
 //-------------------- sub categories-------------------------//
 
 const modalImg = document.getElementById("modal-image");
+const modalVid = document.getElementById("modal-video");
 
 const imageCategories = [
   {
@@ -93,18 +97,29 @@ const imageCategories = [
 const app = {
   init: function () {
     loadImages();
+    loadVideos();
   },
 };
 
 app.init();
 
+function isNeocities() {
+  const neocitiesHost = "https://kanekos.neocities.org";
+  const currentUrl = window.location.href;
+  if (currentUrl.startsWith(neocitiesHost)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function loadImages() {
   imageCategories.forEach((category) => {
     category.categoryArray.forEach((image) => {
-      //FOR NEOCITIES GALLERY - REPLACE SRC WITH THIS URL INSTEAD
-      let externalUrl =
-        "https://kanekos99.github.io/gallery" + image.substring(1);
-
+      let imageSrc = image;
+      if (isNeocities()) {
+        imageSrc = "https://kanekos99.github.io/gallery" + image.substring(1);
+      }
       let galleryClass = "gallery-thumbnail";
       if (
         category.categoryName === "original_chibis" ||
@@ -129,7 +144,7 @@ function loadImages() {
       //Lazy Load Option 2 - no small image placeholder
       const imageThumbnailHTML = `
       <img
-        src="${image}"
+        src="${imageSrc}"
         loading="lazy"
         class="${galleryClass} img-fluid"
         onclick="showImage(this.src)"
@@ -157,7 +172,9 @@ function loadImages() {
 
 //Lazy Load Option 2 - no small image placeholder
 document
-  .querySelectorAll("img.gallery-thumbnail, img.chibi-gallery-thumbnail")
+  .querySelectorAll(
+    "img.gallery-thumbnail, img.chibi-gallery-thumbnail, vid.chibi-gallery-thumbnail",
+  )
   .forEach((img) => {
     img.style.opacity = 0; // start hidden
     img.addEventListener("load", () => {
@@ -223,4 +240,81 @@ function showImage(src) {
   modalImg.onload = function () {
     modalImg.style.display = "block";
   };
+}
+
+/*-------------- for animation gallery ---------------*/
+
+const videoYTLink = document.getElementById("video_yt_link");
+const videoModal = document.getElementById("videoModal");
+
+function loadVideos() {
+  animations.forEach((video) => {
+    let thumbnailSrc = video.thumbnail;
+    if (isNeocities()) {
+      thumbnailSrc =
+        "https://kanekos99.github.io/gallery" + video.thumbnail.substring(1);
+    }
+    const videoThumbnailHTML = `
+    <div class="vid-thumb-container">
+        <img
+          src="${thumbnailSrc}"
+          loading="lazy"
+          class="vid-gallery-thumbnail img-fluid"
+          onclick="getVideoByName(this)"
+          data-vid-name = "${video.name}"
+          data-bs-toggle="modal"
+          data-bs-target="#videoModal"
+        />
+        <div class="play-overlay">
+          <i class="fa fa-play-circle" aria-hidden="true"></i>
+        </div>
+    </div>`;
+    animation_gallery.append(videoThumbnailHTML);
+  });
+}
+
+function getVideoByName(video) {
+  const targetVideoName = video.dataset.vidName;
+  showVideo(targetVideoName);
+}
+
+function showVideo(videoName) {
+  modalVid.innerHTML = "";
+  const targetVideo = animations.find(
+    (animation) => animation.name === videoName,
+  );
+  const source = document.createElement("source");
+  let videoSource = targetVideo.link;
+  if (isNeocities()) {
+    videoSource =
+      "https://kanekos99.github.io/gallery" + targetVideo.link.substring(1);
+  }
+  source.src = videoSource;
+  source.type = "video/mp4";
+  source.id = "video_source";
+  source.dataset.vidName = videoName;
+  modalVid.appendChild(source);
+  videoYTLink.href = targetVideo.yt_link;
+  modalVid.load();
+}
+
+videoModal.addEventListener("hidden.bs.modal", function () {
+  modalVid.pause();
+  modalVid.currentTime = 0;
+});
+
+function showNextOrPrevVid(direction) {
+  const videoSource = document.getElementById("video_source");
+  const currentVidName = videoSource.dataset.vidName;
+  let currentVidIndex = animations.findIndex(
+    (vid) => vid.name === currentVidName,
+  );
+  let nextIndex = currentVidIndex + direction;
+  if (direction === 1 && nextIndex >= animations.length) {
+    nextIndex = 0;
+  } else if (direction === -1 && nextIndex === -1) {
+    nextIndex = animations.length - 1;
+  }
+  modalVid.pause();
+  showVideo(animations[nextIndex].name);
 }

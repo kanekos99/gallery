@@ -140,7 +140,8 @@ hr.dashed {
 }
 
 .gallery-thumbnail:hover,
-.chibi-gallery-thumbnail:hover {
+.chibi-gallery-thumbnail:hover,
+.vid-thumb-container:hover {
   transform: scale(1.05);
 }
 
@@ -262,6 +263,90 @@ hr.dashed {
   background-color: black;
 }
 
+/*-------------------------video modal----------------------------------------------*/
+.video-container {
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  padding: 10px;
+}
+
+video {
+  margin: auto;
+  height: auto;
+  max-width: 50vw;
+}
+
+.video-yt-btn {
+  background-color: #67a9a9;
+  border-radius: 25px;
+  color: white;
+  text-transform: lowercase;
+  padding: 1px 15px 1px 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 2px 2px #2b7379;
+  width: 45%;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  font-family: afacad;
+  text-decoration: none;
+}
+
+.video-yt-btn:hover {
+  background-color: #4c8484;
+}
+
+/*------------------------ video hover button--------------------*/
+
+.vid-thumb-container {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 15rem;
+  object-fit: cover;
+  margin: 2px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.vid-thumb-container:hover .play-overlay {
+  opacity: 1;
+}
+
+.vid-thumb-container:hover img {
+  border: 3px solid rgba(0, 0, 0, 0.5);
+}
+
 /*--------------------------CUSTOM SCROLL BAR-------------------------------*/
 
 /* width */
@@ -302,6 +387,18 @@ hr.dashed {
     height: 8.4375rem;
   }
 
+  .vid-thumb-container {
+    width: 12rem;
+  }
+
+  .video-yt-btn {
+    width: 80%;
+  }
+
+  .footer-buttons {
+    justify-content: center !important;
+  }
+
   .footer-btn {
     width: 100%;
   }
@@ -326,6 +423,14 @@ hr.dashed {
 
   .small-text {
     margin-bottom: 0px;
+  }
+
+  video {
+    max-width: 90vw;
+  }
+
+  .modal-arrow-vid {
+    top: 90%;
   }
 }
 
