@@ -41,6 +41,9 @@ const animation_gallery = $(animation_gallery_name);
 const modalImg = document.getElementById("modal-image");
 const modalVid = document.getElementById("modal-video");
 
+const webringWrapper = document.getElementById("webring-wrapper");
+const sideMenuIcon = document.getElementById("sidemenu-icon");
+
 const imageCategories = [
   {
     categoryArray: original_illustrations,
@@ -96,12 +99,20 @@ const imageCategories = [
 
 const app = {
   init: function () {
+    hideUnusedElements(); 
     loadImages();
     loadVideos();
   },
 };
 
 app.init();
+
+function hideUnusedElements() {
+  if (!isNeocities()) {
+    webringWrapper.style.display = "none";
+    sideMenuIcon.style.display = "none";
+  }
+}
 
 function isNeocities() {
   const neocitiesHost = "https://kanekos.neocities.org";
